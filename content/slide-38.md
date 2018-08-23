@@ -9,6 +9,6 @@ hand inputs collected into an array.
 <pre id="example">
 SELECT product.name, reviews
     FROM product
-      NEST reviews ON KEYS product.reviewList
+      NEST reviews ON (META(reviews).id IN product.reviewList)
         LIMIT 5
 </pre>

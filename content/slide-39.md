@@ -8,6 +8,6 @@ array comprehension to select the detail we are interested in.
 SELECT product.name, 
         ARRAY review.rating FOR review IN reviews END AS ratings
   FROM product
-    NEST reviews ON KEYS product.reviewList
+      NEST reviews ON (META(reviews).id IN product.reviewList)
         LIMIT 5
 </pre>

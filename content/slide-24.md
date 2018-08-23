@@ -12,7 +12,7 @@ Modify the query to only include purchases made in the 4th quarter of 2013.
 SELECT  count(p) as num_purchases, 
           c.firstName || " " || c.lastName as name
   FROM purchases p
-        JOIN customer c ON KEYS p.customerId
+        INNER JOIN customer c ON (p.customerId = META(c).id)
     WHERE c.state IN [ "CA", "TX", "NY" ]
        AND STR_TO_MILLIS(p.purchasedAt) 
            BETWEEN STR_TO_MILLIS("2013-10-01") AND STR_TO_MILLIS("2014-01-01")

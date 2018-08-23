@@ -12,7 +12,6 @@ There is effectively a foreign key - primary key relationship between purchases 
 
 <pre id="example">
 SELECT p, c
-  FROM purchases p
-        JOIN customer c ON KEYS p.customerId
+  FROM purchases p INNER JOIN customer c ON (p.customerId = META(c).id)
     LIMIT 1
 </pre>

@@ -10,6 +10,6 @@ Only include products with more than 10 reviews.
 
 <pre id="example"> 
 SELECT p, r
-  FROM product p JOIN reviews r ON KEYS p.reviewList
+  FROM product p INNER JOIN reviews r ON (META(r).id IN p.reviewList)
     LIMIT 3
 </pre>

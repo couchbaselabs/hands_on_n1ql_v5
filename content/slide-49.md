@@ -11,7 +11,7 @@ DELETE and UPDATE can take an optional WHERE clause.
 DELETE FROM contacts will empty the keyspace!!
 
 <pre id="example">
-DELETE FROM contacts c 
-  USE KEYS "baldwin" 
+DELETE FROM contacts 
+  WHERE META(contacts).id = "baldwin" 
    RETURNING contacts
 </pre>

@@ -10,7 +10,7 @@ Modify the query to only include purchases made in the 4th quarter of 2013.
 
 <pre id="example">
 SELECT c, p
-  FROM purchases p
-        JOIN customer c ON KEYS p.customerId
+  FROM purchases p 
+       INNER JOIN customer c ON (p.customerId = META(c).id)
     LIMIT 3
 </pre>

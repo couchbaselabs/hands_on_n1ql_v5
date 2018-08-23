@@ -11,6 +11,6 @@ We'll then look at the EXPLAIN.
 SELECT productId, rating, COUNT(productId) 
     FROM reviews 
 	WHERE rating < 3
-            AND productId BETWEEN "product300" AND "product400" 
-            GROUP BY productId, rating;
+             AND productId BETWEEN "product300" AND "product400" 
+          GROUP BY productId, rating;
 </pre>

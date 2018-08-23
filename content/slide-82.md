@@ -8,7 +8,7 @@ See the query plan.
 
 <pre id="example"> 
 SELECT c.customerId, count(*) totpurchases 
-    FROM purchases p INNER JOIN customer c ON KEYS p.customerId 
+    FROM purchases p INNER JOIN customer c ON (p.customerId  = META(c).id)
         GROUP BY c.customerId 
             ORDER BY COUNT(*) DESC
                 LIMIT 10;

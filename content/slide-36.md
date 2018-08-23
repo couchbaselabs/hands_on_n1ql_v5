@@ -9,7 +9,8 @@ This solution unnests the review ids with each product, and then aggregates the 
 
 <pre id="example">
 SELECT product.name, count(reviewID) AS  numReviews 
-   FROM product UNNEST reviewList AS reviewID 
+   FROM product 
+           UNNEST reviewList AS reviewID 
      GROUP BY product.productId, product.name 
        HAVING count(reviewID) >= 20 
          ORDER BY numReviews desc

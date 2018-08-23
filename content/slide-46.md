@@ -9,7 +9,7 @@ The example on the right changes the type of the document "baldwin" from
 
 <pre id="example">
 UPDATE contacts 
-  USE KEYS "baldwin" 
     SET type = "actor" 
+      WHERE META(contacts).id = "baldwin"
       RETURNING contacts
 </pre>

@@ -10,6 +10,6 @@ be in the USE KEYS clause.
 <pre id="example">
 SELECT fname, email
   FROM contacts
-    USE KEYS ["dave", "ian"]
+    WHERE META().id IN ["dave", "ian"]
 
 </pre>

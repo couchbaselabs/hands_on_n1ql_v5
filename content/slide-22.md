@@ -9,7 +9,7 @@ This can be used to join a product with review detail. The query on the right sh
 <pre id="example">
 
 SELECT p.name, r.rating
-  FROM product p USE KEYS "product320"
-        JOIN reviews r ON KEYS p.reviewList
+  FROM product p INNER JOIN reviews r ON (META(r).id  IN p.reviewList)
+    WHERE META(p).id  = "product320"
 
 </pre>
